@@ -8,41 +8,115 @@
 
 
 ## 사용 기술 및 협업 스텍
-`JDK 11`
-`Springboot 2.7.6`
-`Inmemory DB`
-`Spring security`
-`Spring Data JPA`
+- `JDK 11`
+- `Springboot 2.7.6`
+- `Inmemory DB`
+- `Spring security`
+- `Spring Data JPA`
 
 ## 🙋‍♀️ 서비스 기능
 
 ## 프로젝트 구조
-🗂️ 
-└─ src
-   └─ main
-      ├─ java.cpm.example.team2_be
-      │  └─ com
-      │  ├─ BaseEntity.java
-      │  ├─ Team2BeApplication.java
-      │  ├─ 📦 album
-      │  │  ├─ 📦 member
-      │  │  └─ 📦 page
-      │  │     └─ image
-      │  ├─ 📦 auth
-      │  ├─ core
-      │  │  ├─ config
-      │  │  ├─ error
-      │  │  │  └─ exception
-      │  │  ├─ security
-      │  │  └─ utils
-      │  ├─ error
-      │  ├─ 📦 reward
-      │  │  └─  progress
-      │  ├─ 📦 title
-      │  │  └─ collection
-      │  ├─ 📦 trash
-      │  └─ 📦 user
-      └─ resource
+```
+  🗂️ 
+   └─ src
+        │   ├── docs
+        │   │   └── asciidoc
+        │   │       └── api-docs.adoc
+        │   ├── main
+        │   │   ├── java
+        │   │   │   └── com
+        │   │   │       └── example
+        │   │   │           └── kakao
+        │   │   │               ├── KakaoApplication.java
+        │   │   │               ├── _core
+        │   │   │               │   ├── errors
+        │   │   │               │   │   ├── GlobalExceptionHandler.java
+        │   │   │               │   │   ├── GlobalValidationHandler.java
+        │   │   │               │   │   └── exception
+        │   │   │               │   │       ├── Exception400.java
+        │   │   │               │   │       ├── Exception401.java
+        │   │   │               │   │       ├── Exception403.java
+        │   │   │               │   │       ├── Exception404.java
+        │   │   │               │   │       ├── Exception405.java
+        │   │   │               │   │       └── Exception500.java
+        │   │   │               │   ├── security
+        │   │   │               │   │   ├── CustomUserDetails.java
+        │   │   │               │   │   ├── CustomUserDetailsService.java
+        │   │   │               │   │   ├── JWTProvider.java
+        │   │   │               │   │   ├── JwtAuthenticationFilter.java
+        │   │   │               │   │   └── SecurityConfig.java
+        │   │   │               │   └── utils
+        │   │   │               │       ├── ApiUtils.java
+        │   │   │               │       ├── FakeStore.java
+        │   │   │               │       └── FilterResponseUtils.java
+        │   │   │               ├── cart
+        │   │   │               │   ├── Cart.java
+        │   │   │               │   ├── CartJPARepository.java
+        │   │   │               │   ├── CartRequest.java
+        │   │   │               │   ├── CartResponse.java
+        │   │   │               │   ├── CartRestController.java
+        │   │   │               │   └── CartService.java
+        │   │   │               ├── log
+        │   │   │               │   ├── ErrorLog.java
+        │   │   │               │   └── ErrorLogJPARepository.java
+        │   │   │               ├── order
+        │   │   │               │   ├── Order.java
+        │   │   │               │   ├── OrderJPARepository.java
+        │   │   │               │   ├── OrderResponse.java
+        │   │   │               │   ├── OrderRestController.java
+        │   │   │               │   ├── OrderService.java
+        │   │   │               │   └── item
+        │   │   │               │       ├── Item.java
+        │   │   │               │       └── ItemJPARepository.java
+        │   │   │               ├── product
+        │   │   │               │   ├── Product.java
+        │   │   │               │   ├── ProductJPARepository.java
+        │   │   │               │   ├── ProductResponse.java
+        │   │   │               │   ├── ProductRestController.java
+        │   │   │               │   ├── ProductService.java
+        │   │   │               │   └── option
+        │   │   │               │       ├── Option.java
+        │   │   │               │       └── OptionJPARepository.java
+        │   │   │               └── user
+        │   │   │                   ├── User.java
+        │   │   │                   ├── UserJPARepository.java
+        │   │   │                   ├── UserRequest.java
+        │   │   │                   ├── UserResponse.java
+        │   │   │                   ├── UserRestController.java
+        │   │   │                   └── UserService.java
+        │   │   └── resources
+        │   │       ├── application-ide.yml
+        │   │       ├── application-local.yml
+        │   │       ├── application-prod.yml
+        │   │       ├── application-test.yml
+        │   │       ├── application.yml
+        │   │       ├── db
+        │   │       │   └── teardown.sql
+        │   │       └── static
+        │   │           └── docs
+        │   │               └── api-docs.html
+        │   └── test
+        │       └── java
+        │           └── com
+        │               └── example
+        │                   └── kakao
+        │                       ├── MyRestDoc.java
+        │                       ├── _core
+        │                       │   ├── regex
+        │                       │   │   └── RegexTest.java
+        │                       │   └── util
+        │                       │       └── DummyEntity.java
+        │                       ├── cart
+        │                       │   └── CartIntegrationTest.java
+        │                       ├── order
+        │                       │   └── OrderIntegrationTest.java
+        │                       ├── product
+        │                       │   └── ProductIntegrationTest.java
+        │                       └── user
+        │                           └── UserIntegrationTest.java
+        └── startFront.sh
+```
 ©generated by Project Tree Generator
 
 
